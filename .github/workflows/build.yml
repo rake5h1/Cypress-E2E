@@ -15,4 +15,11 @@ jobs:
           command: npx cypress run
           browser: chrome
 
+      - name: Cypress Test Report
+        uses: actions/upload-artifact@v3
+        with: 
+          name: Mochaawesome HTML Report
+          path: cypress/reports/html
+
+
        
