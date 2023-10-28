@@ -44,7 +44,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          command: npm run test:firstname
+          command: npm run test:lastname
           browser: chrome
 
       - name: Cypress Test Report
