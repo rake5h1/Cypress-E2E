@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:firstname": " npx cypress run --spec cypress/e2e/tests/Firstname.cy.js"
+    "test:firstname": " npx cypress run --spec cypress/e2e/tests/Firstname.cy.js",
+    "test:lastname": " npx cypress run --spec cypress/e2e/tests/LastName.cy.js"
   },
   "repository": {
     "type": "git",
