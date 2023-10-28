@@ -39,7 +39,13 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
         
-        
+      - name: Clean environment
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+
+      - name: Install npm dependencies
+        run: npm install
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
