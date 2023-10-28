@@ -1,5 +1,4 @@
-name: Cypress Tests
-
+name: E2E
 on: push
 
 jobs:
