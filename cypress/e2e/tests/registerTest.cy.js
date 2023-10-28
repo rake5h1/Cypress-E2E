@@ -7,7 +7,11 @@ describe('First Test', () => {
 
     it('firstName', () => {
 
-        Reg.enterUserName(data.name)
+        Reg.enterUserName(data.Firstname)
+    })
+    it('LastName', () => {
+
+        Reg.enterUserName(data.Lastname)
     })
 
 })
