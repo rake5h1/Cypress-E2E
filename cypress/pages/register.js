@@ -13,13 +13,13 @@ export class Register {
     enterUserName (name) {
 
         cy.visit(Cypress.env('URL'))
-        cy.get(this.weblocaters.firstName).should('be.visible').type(Firstnamename)
+        cy.get(this.weblocaters.firstName).should('be.visible').type(name)
 
     }
     enterLastName (name) {
 
         cy.visit(Cypress.env('URL'))
-        cy.get(this.weblocaters.lastName).should('be.visible').type(Lastname)
+        cy.get(this.weblocaters.lastName).should('be.visible').type(name)
 
     }
 
