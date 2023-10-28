@@ -5,10 +5,7 @@ import data from '../../fixtures/data.json'
 
 describe('First Test', () => {
 
-    it('firstName', () => {
-
-        Reg.enterUserName(data.Firstname)
-    })
+    
     it('LastName', () => {
 
         Reg.enterUserName(data.Lastname)
