@@ -56,6 +56,6 @@ jobs:
       - name: Cypress Test Report
         uses: actions/upload-artifact@v3
         with: 
-          name: Mochaawesome HTML Report
+          name: Mochaawesome HTML Report2
           path: cypress/reports/html
 
