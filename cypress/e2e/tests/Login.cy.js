@@ -3,11 +3,13 @@ let Reg = new Register()
 import data from '../../fixtures/data.json'
 
 
-describe('First Test', () => {
+describe('Login Test', () => {
 
-    it('firstName', () => {
+    it('Login', () => {
 
         Reg.enterUserName(data.Firstname)
+        Reg.enterLastName(data.Lastname)
+        Reg.clickLogin()
         
     })
     

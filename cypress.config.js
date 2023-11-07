@@ -2,11 +2,17 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
+
   reporterOptions: {
-    ignoreVideos: false,
-    videoOnFailOnly: false,
-    saveAllAttempts: true,
+    "reportDir": "mochawesome-report",
+    "overwrite": false,
+    "html": true,
+    "json": true,
+    "video": true,
+    "videosFolder": "cypress/videos"
   },
+
+
 
   e2e: {
     setupNodeEvents(on, config) {
@@ -17,6 +23,6 @@ module.exports = defineConfig({
   },
   env: {
 
-    URL: 'https://naveenautomationlabs.com/opencart/index.php?route=account/register'
+    URL: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
   }
 });

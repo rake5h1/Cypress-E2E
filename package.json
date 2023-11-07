@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx cypress run --spec cypress/e2e/tests/Login.cy.js --headed Chrome",
     "test:firstname": " npx cypress run --spec cypress/e2e/tests/Firstname.cy.js",
     "test:lastname": " npx cypress run --spec cypress/e2e/tests/Lastname.cy.js"
   },

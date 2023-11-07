@@ -22,7 +22,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          command: npm run test:firstname
+          command: npm run test
           browser: chrome
 
       - name: Cypress Test Report
@@ -31,32 +31,32 @@ jobs:
           name: Mochaawesome HTML Report
           path: cypress/reports/html
 
-  cypress-run-second:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+  # cypress-run-second:
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #     # Install NPM dependencies, cache them correctly
+  #     # and run all Cypress tests
         
-      - name: Clean environment
-        run: |
-          rm -rf node_modules
-          rm -f package-lock.json
+  #     - name: Clean environment
+  #       run: |
+  #         rm -rf node_modules
+  #         rm -f package-lock.json
 
-      - name: Install npm dependencies
-        run: npm install
+  #     - name: Install npm dependencies
+  #       run: npm install
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          command: npm run test:lastname
-          browser: chrome
+  #     - name: Cypress run
+  #       uses: cypress-io/github-action@v5
+  #       with:
+  #         command: npm run test:lastname
+  #         browser: chrome
 
-      - name: Cypress Test Report
-        uses: actions/upload-artifact@v3
-        if: always()
-        with: 
-          name: Mochaawesome HTML Report2
-          path: cypress/reports/html
+  #     - name: Cypress Test Report
+  #       uses: actions/upload-artifact@v3
+  #       if: always()
+  #       with: 
+  #         name: Mochaawesome HTML Report2
+  #         path: cypress/reports/html
 
