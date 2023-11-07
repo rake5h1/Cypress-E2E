@@ -25,6 +25,7 @@ module.exports = defineConfig({
 
     URL: 'https://rake5h1.github.io/ReactApp/'
 
-  }
+  },
+  testFiles: "**/*.feature"
 
 });
