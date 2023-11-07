@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec cypress/e2e/tests/Login.cy.js --headed Chrome",
+    "test": "npx cypress run --spec cypress/e2e/tests/ReactTest.cy.js --headed --browser chrome",
     "test:firstname": " npx cypress run --spec cypress/e2e/tests/Firstname.cy.js",
     "test:lastname": " npx cypress run --spec cypress/e2e/tests/Lastname.cy.js"
   },
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/rake5h1/Cypress-E2E#readme",
   "devDependencies": {
-    "cypress": "^13.3.3",
+    "cypress": "^13.4.0",
     "cypress-mochawesome-reporter": "^3.6.1"
   }
 }

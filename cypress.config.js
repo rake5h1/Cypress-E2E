@@ -8,8 +8,7 @@ module.exports = defineConfig({
     "overwrite": false,
     "html": true,
     "json": true,
-    "video": true,
-    "videosFolder": "cypress/videos"
+
   },
 
 
@@ -20,9 +19,12 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
 
     },
+
   },
   env: {
 
-    URL: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
+    URL: 'https://rake5h1.github.io/ReactApp/'
+
   }
+
 });
