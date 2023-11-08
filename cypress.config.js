@@ -30,7 +30,7 @@ module.exports = defineConfig({
   },
   env: {
 
-    URL: 'https://rake5h1.github.io/ReactApp/'
+    URL: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
 
   },
 
