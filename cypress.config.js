@@ -10,13 +10,7 @@ module.exports = defineConfig({
     "json": true,
 
   },
-  'cypress-cucumber-preprocessor': {
-
-    nonGlobalStepDefinitions: false,
-
-
-    integrationFolder: "cypress/integration"
-  },
+ 
 
 
   e2e: {
