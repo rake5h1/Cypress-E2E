@@ -15,7 +15,7 @@ module.exports = defineConfig({
     nonGlobalStepDefinitions: false,
 
 
-    stepDefinitions:'/cypress/integration'
+    integrationFolder: "cypress/integration"
   },
 
 
