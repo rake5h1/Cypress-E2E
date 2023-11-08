@@ -10,14 +10,21 @@ module.exports = defineConfig({
     "json": true,
 
   },
+  'cypress-cucumber-preprocessor': {
 
+    nonGlobalStepDefinitions: false,
+
+
+    stepDefinitions: "./cypress/Integration"
+  },
 
 
   e2e: {
+    specPattern: '**/*.feature',
     setupNodeEvents(on, config) {
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on);
-
+      require('./cypress/plugins/index.js')(on, config)
     },
 
   },
@@ -26,6 +33,6 @@ module.exports = defineConfig({
     URL: 'https://rake5h1.github.io/ReactApp/'
 
   },
-  testFiles: "**/*.feature"
+
 
 });
