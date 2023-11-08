@@ -11,7 +11,7 @@ module.exports = defineConfig({
 
   },
   "cypress-cucumber-preprocessor": {
-    nonGlobalStepDefinitions: true,
+    nonGlobalStepDefinitions: false,
     integrationFolder: "cypress/integration"
   },
 
