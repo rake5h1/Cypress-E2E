@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --headed --browser chrome",
-    "test:firstname": " npx cypress run --spec cypress/e2e/tests/Firstname.cy.js",
-    "test:lastname": " npx cypress run --spec cypress/e2e/tests/Lastname.cy.js"
+    "test": "npx cypress run --headed --browser chrome"
+    
   },
   "repository": {
     "type": "git",
