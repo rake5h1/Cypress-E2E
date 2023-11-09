@@ -3,10 +3,6 @@ pipeline {
 
    tools {nodejs "Node12"}
 
-   environment {
-       CHROME_BIN = '/bin/google-chrome'
-      
-   }
 
    stages {
        stage('Dependencies') {
@@ -15,7 +11,7 @@ pipeline {
            }
        }
        stage('e2e Tests') {
-         Parallel{
+         {
              stage('Test 1') {
                   steps {
                 sh 'npm run test'
