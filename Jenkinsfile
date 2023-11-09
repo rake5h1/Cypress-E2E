@@ -1,12 +1,14 @@
 pipeline {
-   agent any
+   agent {
+      label 'ubuntu'
+   }
 
    tools {nodejs "NodeJS"}
 
    stages {
        stage('Dependencies') {
            steps {
-               bat 'npm install'
+               sh 'npm install'
            }
        }
        stage('e2e Tests') {
@@ -14,7 +16,7 @@ pipeline {
                script {
                    stage('Test 1') {
                        steps {
-                           bat 'npm run test'
+                           sh 'npm run test'
                        }
                    }
                }
