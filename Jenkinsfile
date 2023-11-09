@@ -6,7 +6,7 @@ pipeline {
    stages {
        stage('Dependencies') {
            steps {
-               sh 'npm install'
+               bat 'npm install'
            }
        }
        stage('e2e Tests') {
@@ -14,7 +14,7 @@ pipeline {
                script {
                    stage('Test 1') {
                        steps {
-                           sh 'npm run test'
+                           bat 'npm run test'
                        }
                    }
                }
