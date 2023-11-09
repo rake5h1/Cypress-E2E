@@ -14,7 +14,7 @@ pipeline {
                script {
                    stage('Test 1') {
                        steps {
-                           sh 'npm run test'
+                           sh 'npm cypress run'
                        }
                    }
                }
