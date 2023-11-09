@@ -3,7 +3,6 @@ pipeline {
 
    tools {nodejs "Node12"}
 
-
    stages {
        stage('Dependencies') {
            steps {
@@ -11,16 +10,15 @@ pipeline {
            }
        }
        stage('e2e Tests') {
-         {
-             stage('Test 1') {
-                  steps {
-                sh 'npm run test'
-                  }
+           steps {
+               script {
+                   stage('Test 1') {
+                       steps {
+                           sh 'npm run test'
+                       }
+                   }
                }
-             
-             
-
+           }
        }
    }
-}
 }
