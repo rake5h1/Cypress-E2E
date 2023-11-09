@@ -1,6 +1,6 @@
 pipeline {
    agent {
-      label 'ubuntu'
+      label 'linux'
    }
 
    tools {nodejs "NodeJS"}
