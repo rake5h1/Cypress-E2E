@@ -21,4 +21,4 @@ ENV DISPLAY=:99
 COPY package*.json ./
 RUN npm install
 COPY . .
-CMD [ "npm","run","test" ]
+CMD ["sh", "-c", "Xvfb $DISPLAY -ac +extension RANDR -screen 0 1280x1024x16 & sleep 2 && npm run test"]
