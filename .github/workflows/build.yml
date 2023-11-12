@@ -1,35 +1,35 @@
-name: E2E
-on: push
+# name: E2E
+# on: push
 
-jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Clean environment
-        run: |
-          rm -rf node_modules
-          rm -f package-lock.json
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-22.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       # Install NPM dependencies, cache them correctly
+#       # and run all Cypress tests
+#       - name: Clean environment
+#         run: |
+#           rm -rf node_modules
+#           rm -f package-lock.json
 
-      - name: Install npm dependencies
-        run: npm install
+#       - name: Install npm dependencies
+#         run: npm install
         
         
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          command: npm run test
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v5
+#         with:
+#           command: npm run test
           
 
-      - name: Cypress Test Report
-        uses: actions/upload-artifact@v3
-        with: 
-          name: Mochaawesome HTML Report
-          path: cypress/reports/html
+#       - name: Cypress Test Report
+#         uses: actions/upload-artifact@v3
+#         with: 
+#           name: Mochaawesome HTML Report
+#           path: cypress/reports/html
 
   # cypress-run-second:
   #   runs-on: ubuntu-22.04
@@ -55,8 +55,43 @@ jobs:
 
   #     - name: Cypress Test Report
   #       uses: actions/upload-artifact@v3
-  #       if: always()
+        # 
   #       with: 
   #         name: Mochaawesome HTML Report2
   #         path: cypress/reports/html
 
+
+name: Docker Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '14'
+
+    - name: Clean environment
+      run: |
+        rm -rf node_modules
+        rm -f package-lock.json
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Docker image
+      run: docker build --no-cache -t my-app .
+
+    - name: Run Docker Image
+      run: |
+        docker run -it my-app
