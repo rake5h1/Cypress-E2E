@@ -60,38 +60,31 @@
   #         name: Mochaawesome HTML Report2
   #         path: cypress/reports/html
 
+  name: Cypress Tests
 
-name: Docker Workflow
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '14'
-
-    - name: Clean environment
-      run: |
-        rm -rf node_modules
-        rm -f package-lock.json
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build Docker image
-      run: docker build --no-cache -t my-app .
-
-    - name: Run Docker Image
-      run: |
-        docker run my-app
+  on:
+    push:
+      branches:
+        - main
+  
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+  
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+  
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '14'
+  
+        - name: Install dependencies
+          run: npm install
+  
+        - name: Run Cypress tests
+          run: |
+            docker build -t my-cypress-tests .
+            docker run my-cypress-tests
+  
